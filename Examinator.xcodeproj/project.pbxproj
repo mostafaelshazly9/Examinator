@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F283B1E023F9FF6A0065B00D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1DF23F9FF6A0065B00D /* College.swift */; };
+		F283B1E223F9FF840065B00D /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E123F9FF840065B00D /* Level.swift */; };
+		F283B1E423F9FF900065B00D /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E323F9FF900065B00D /* Department.swift */; };
+		F283B1E623F9FFC50065B00D /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E523F9FFC50065B00D /* Professor.swift */; };
+		F283B1E823F9FFDF0065B00D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E723F9FFDF0065B00D /* Subject.swift */; };
+		F283B1EA23FA00130065B00D /* ProffessorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E923FA00130065B00D /* ProffessorRequest.swift */; };
+		F283B1EC23FA012E0065B00D /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1EB23FA012E0065B00D /* Chapter.swift */; };
+		F283B1EE23FA01440065B00D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1ED23FA01440065B00D /* Question.swift */; };
+		F283B1F023FA016D0065B00D /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1EF23FA016D0065B00D /* Exam.swift */; };
+		F283B1F223FA01790065B00D /* ExamStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1F123FA01790065B00D /* ExamStructure.swift */; };
+		F283B1F423FA019F0065B00D /* ExamRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1F323FA019F0065B00D /* ExamRules.swift */; };
+		F283B1F623FA03970065B00D /* ExamResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1F523FA03970065B00D /* ExamResult.swift */; };
 		F2C9D77823F8526900AE09A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9D77723F8526900AE09A3 /* AppDelegate.swift */; };
 		F2C9D77A23F8526900AE09A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9D77923F8526900AE09A3 /* SceneDelegate.swift */; };
 		F2C9D77C23F8526900AE09A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9D77B23F8526900AE09A3 /* ViewController.swift */; };
@@ -16,6 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F283B1DF23F9FF6A0065B00D /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
+		F283B1E123F9FF840065B00D /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		F283B1E323F9FF900065B00D /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		F283B1E523F9FFC50065B00D /* Professor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
+		F283B1E723F9FFDF0065B00D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		F283B1E923FA00130065B00D /* ProffessorRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProffessorRequest.swift; sourceTree = "<group>"; };
+		F283B1EB23FA012E0065B00D /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		F283B1ED23FA01440065B00D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		F283B1EF23FA016D0065B00D /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		F283B1F123FA01790065B00D /* ExamStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamStructure.swift; sourceTree = "<group>"; };
+		F283B1F323FA019F0065B00D /* ExamRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRules.swift; sourceTree = "<group>"; };
+		F283B1F523FA03970065B00D /* ExamResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResult.swift; sourceTree = "<group>"; };
 		F2C9D77423F8526900AE09A3 /* Examinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C9D77723F8526900AE09A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2C9D77923F8526900AE09A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +61,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F283B1DE23F9FE850065B00D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F283B1DF23F9FF6A0065B00D /* College.swift */,
+				F283B1E123F9FF840065B00D /* Level.swift */,
+				F283B1E323F9FF900065B00D /* Department.swift */,
+				F283B1E523F9FFC50065B00D /* Professor.swift */,
+				F283B1E723F9FFDF0065B00D /* Subject.swift */,
+				F283B1E923FA00130065B00D /* ProffessorRequest.swift */,
+				F283B1ED23FA01440065B00D /* Question.swift */,
+				F283B1EB23FA012E0065B00D /* Chapter.swift */,
+				F283B1EF23FA016D0065B00D /* Exam.swift */,
+				F283B1F123FA01790065B00D /* ExamStructure.swift */,
+				F283B1F323FA019F0065B00D /* ExamRules.swift */,
+				F283B1F523FA03970065B00D /* ExamResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F2C9D76B23F8526900AE09A3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +99,7 @@
 		F2C9D77623F8526900AE09A3 /* Examinator */ = {
 			isa = PBXGroup;
 			children = (
+				F283B1DE23F9FE850065B00D /* Models */,
 				F2C9D77723F8526900AE09A3 /* AppDelegate.swift */,
 				F2C9D77923F8526900AE09A3 /* SceneDelegate.swift */,
 				F2C9D77B23F8526900AE09A3 /* ViewController.swift */,
@@ -138,9 +182,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F283B1E823F9FFDF0065B00D /* Subject.swift in Sources */,
+				F283B1EC23FA012E0065B00D /* Chapter.swift in Sources */,
+				F283B1E623F9FFC50065B00D /* Professor.swift in Sources */,
+				F283B1F623FA03970065B00D /* ExamResult.swift in Sources */,
+				F283B1E223F9FF840065B00D /* Level.swift in Sources */,
+				F283B1F423FA019F0065B00D /* ExamRules.swift in Sources */,
 				F2C9D77C23F8526900AE09A3 /* ViewController.swift in Sources */,
+				F283B1F223FA01790065B00D /* ExamStructure.swift in Sources */,
 				F2C9D77823F8526900AE09A3 /* AppDelegate.swift in Sources */,
+				F283B1EA23FA00130065B00D /* ProffessorRequest.swift in Sources */,
 				F2C9D77A23F8526900AE09A3 /* SceneDelegate.swift in Sources */,
+				F283B1F023FA016D0065B00D /* Exam.swift in Sources */,
+				F283B1E023F9FF6A0065B00D /* College.swift in Sources */,
+				F283B1EE23FA01440065B00D /* Question.swift in Sources */,
+				F283B1E423F9FF900065B00D /* Department.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
