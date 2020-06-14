@@ -8,14 +8,14 @@
 
 import Foundation
 
-class ProfessorRequest{
+struct ProfessorRequest{
     let college:String!
     let professor:String!
     let state:String!
-    init(college:String, professor:String, state:String) {
-        self.college = college
-        self.professor = professor
-        self.state = state
-    }
+//    init(college:String, professor:String, state:String) {
+//        self.college = college
+//        self.professor = professor
+//        self.state = state
+//    }
 
 }

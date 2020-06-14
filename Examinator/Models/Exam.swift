@@ -6,17 +6,22 @@
 //  Copyright © 2020 Mostafa Elshazly. All rights reserved.
 //
 
-//import Foundation
+import Foundation
+
+struct Exam{
+    
+    let subject:String!
+    let structure:ExamStructure!
+    var questions = [Question]()
+    let time:Int!
+    
+    //TODO:- Get questions based on structure
+//    func getQuestions()->[Question]{
 //
-//class Exam{
-//    
-//    let subject:String!
-//    let structure:ExamStructure!
-//    var questions = [Question]()
-//    let time:Int!
-//    
+//    }
+    
 //    init(<#parameters#>) {
 //        <#statements#>
 //    }
-//
-//}
+
+}
