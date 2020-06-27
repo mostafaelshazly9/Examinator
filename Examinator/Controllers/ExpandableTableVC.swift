@@ -19,7 +19,7 @@ class ExpandableTableVC: UITableViewController{
         switch selectedView {
         case .requests:
             let strategy = RequestsStrategy()
-            strategy.setupView(tableViewDelegate: RequestsStrategyDelegate(), tableViewDataSource: RequestsStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
+            strategy.setupView(tableViewDelegate: RequestsStrategyDelegate(), tableViewDataSource: RequestsStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "ProfessorRequestHandler", storyboardType: ProfessorRequestHandler.self)
             return strategy
         default:
             print("Class not implemented yet")

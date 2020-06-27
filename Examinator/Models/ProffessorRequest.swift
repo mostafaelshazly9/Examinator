@@ -62,7 +62,7 @@ struct ProfessorRequest:Item{
             var requests = [ProfessorRequest]()
             for child in dataSnapShot.children{
                 let request = (child as! DataSnapshot).value  as! [String: String]
-                if request["college"] == college{
+                if request["college"] == college && request["state"] == "pending"{
                     let newRequest = ProfessorRequest(id: request["id"]!,
                                                       college: request["college"]!,
                                                       professor: request["professor"]!,
@@ -74,5 +74,12 @@ struct ProfessorRequest:Item{
         }
     }
 
+    func acceptRequest(){
+        ProfessorRequest.ref.child(self.id).updateChildValues(["state": "accepted"])
+    }
+    
+    func rejectRequest(){
+        ProfessorRequest.ref.child(self.id).updateChildValues(["state": "rejected"])
+    }
 
 }

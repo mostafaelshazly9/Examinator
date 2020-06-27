@@ -453,6 +453,56 @@
             </objects>
             <point key="canvasLocation" x="7157.971014492754" y="-1716.2946428571429"/>
         </scene>
+        <!--Professor Request Handler-->
+        <scene sceneID="mCC-cB-Spt">
+            <objects>
+                <viewController storyboardIdentifier="ProfessorRequestHandler" id="KDM-LN-9yK" customClass="ProfessorRequestHandler" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KiX-WR-uzb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M1-pA-Hvy">
+                                <rect key="frame" x="161" y="101" width="92" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Accept"/>
+                                <connections>
+                                    <action selector="acceptButtonTapped:" destination="KDM-LN-9yK" eventType="touchUpInside" id="veq-cm-dJx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="professor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYj-C4-aV8">
+                                <rect key="frame" x="146" y="44" width="122" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akb-Tx-9pO">
+                                <rect key="frame" x="166" y="166" width="82" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Reject"/>
+                                <connections>
+                                    <action selector="rejectButtonTapped:" destination="KDM-LN-9yK" eventType="touchUpInside" id="9ki-7F-Rs1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Akb-Tx-9pO" firstAttribute="centerX" secondItem="Dro-LJ-dwd" secondAttribute="centerX" id="C5z-ex-Pn3"/>
+                            <constraint firstItem="WYj-C4-aV8" firstAttribute="centerX" secondItem="Dro-LJ-dwd" secondAttribute="centerX" id="Hua-1q-66S"/>
+                            <constraint firstItem="1M1-pA-Hvy" firstAttribute="top" secondItem="WYj-C4-aV8" secondAttribute="bottom" constant="21" id="IGX-1z-Uo2"/>
+                            <constraint firstItem="WYj-C4-aV8" firstAttribute="top" secondItem="Dro-LJ-dwd" secondAttribute="top" id="Lml-2v-GN2"/>
+                            <constraint firstItem="1M1-pA-Hvy" firstAttribute="centerX" secondItem="Dro-LJ-dwd" secondAttribute="centerX" id="wZL-YU-J11"/>
+                            <constraint firstItem="Akb-Tx-9pO" firstAttribute="top" secondItem="1M1-pA-Hvy" secondAttribute="bottom" constant="17" id="x1Q-bZ-YbX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dro-LJ-dwd"/>
+                    </view>
+                    <connections>
+                        <outlet property="professorLabel" destination="WYj-C4-aV8" id="BdM-8F-uvt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbc-0A-lGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8248" y="-1687"/>
+        </scene>
         <!--Admin Landing-->
         <scene sceneID="gZI-zX-MLC">
             <objects>

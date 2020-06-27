@@ -9,8 +9,8 @@
 import UIKit
 
 protocol ExpandableStrategy: UITableViewController {
-//    var tableViewDelegate:ExpandableDelegate { get set }
-//    var tableViewDataSource: ExpandableDataSource { get set }
+    var tableViewDelegate:ExpandableDelegate { get set }
+    var tableViewDataSource: ExpandableDataSource { get set }
     var barButton:UIBarButtonItem? { get set }
     var barButtonFunction:(()->Void )?  { get set }
     
