@@ -17,9 +17,35 @@ class Register:UIViewController{
     @IBOutlet weak var college: UITextField!
     
     @IBAction func register(_ sender: UIButton) {
+        User.register(email: email.text ?? "", password: password.text ?? "", college: college.text ?? "", userType: User.UserType.init(rawValue: accType)!, successHandler: { user in
+            switch self.storyboard?.instantiateViewController(withIdentifier: "\(self.accType)Landing") {
+            case let adminVC as AdminLanding:
+                adminVC.modalPresentationStyle = .fullScreen
+                self.present(adminVC,animated: true)
+                
+            case let professorVC as ProfessorLanding:
+                ProfessorRequest.createRequest()
+                AlertManager.showAlert(title: "Request sent", message: "A request to join this college as a professor has been sent to an admin and is waiting approval", target: self)
+//                professorVC.modalPresentationStyle = .fullScreen
+//                self.present(professorVC,animated: true)
+
+            case let studentVC as StudentLanding:
+                studentVC.modalPresentationStyle = .fullScreen
+                self.present(studentVC,animated: true)
+                
+            default:
+                print("Class not created yet")
+            }
+            
+        }) { error in
+            AlertManager.showAlert(title: "Error", message: error.localizedDescription, target: self)
+            
+        }
+        
+        
 //        let ref = Database.database().reference(withPath: "users")
 //        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { [weak self] user, error in
-            //Registration successful
+//            //            Registration successful
 //            if error == nil {
 //                Auth.auth().signIn(withEmail: self!.email.text!,
 //                                   password: self!.password.text!)
@@ -30,29 +56,32 @@ class Register:UIViewController{
 //                    "type":self!.accType,
 //                    "college":self!.college.text!
 //                    ] as [String : Any]
-//
+//                
 //                ref.child(uuid).setValue(dict)
-//
-        DispatchQueue.main.async { [weak self] in
-            switch self!.storyboard?.instantiateViewController(withIdentifier: "\(self!.accType)Landing") {
-            case let adminVC as AdminLanding:
-                adminVC.modalPresentationStyle = .fullScreen
-                self!.dismiss(animated: true) {
-                    self!.present(adminVC,animated: true)
-                }
-
-            default:
-                print("Class not created yet")
-            }
-
-        }
-                                
-//
+//                
+//                switch self!.storyboard?.instantiateViewController(withIdentifier: "\(self!.accType)Landing") {
+//                case let adminVC as AdminLanding:
+//                    adminVC.modalPresentationStyle = .fullScreen
+//                    self!.present(adminVC,animated: true)
+//                    
+//                case let professorVC as ProfessorLanding:
+//                    professorVC.modalPresentationStyle = .fullScreen
+//                    self!.present(professorVC,animated: true)
+//                    
+//                case let studentVC as StudentLanding:
+//                    studentVC.modalPresentationStyle = .fullScreen
+//                    self!.present(studentVC,animated: true)
+//                    
+//                default:
+//                    print("Class not created yet")
+//                }
+//                
+//                
 //            }else{
 //                //Registration failed
 //                AlertManager.showAlert(title: "Error", message: error!.localizedDescription, target: self!)
 //            }
 //        }
     }
-
+    
 }

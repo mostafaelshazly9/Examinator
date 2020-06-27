@@ -15,12 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES2-e4-1TG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.test" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES2-e4-1TG">
                                 <rect key="frame" x="20" y="152" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ef7-fG-9z1">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ef7-fG-9z1">
                                 <rect key="frame" x="20" y="219" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -35,6 +35,9 @@
                                 <rect key="frame" x="20" y="283" width="374" height="47"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <state key="normal" title="LOGIN"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zWp-cV-UAM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogI-Pd-ezC">
                                 <rect key="frame" x="20" y="352" width="374" height="47"/>
@@ -64,6 +67,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ES2-e4-1TG" id="fAZ-qA-BuQ"/>
+                        <outlet property="passwordTextField" destination="Ef7-fG-9z1" id="aLB-cz-1hT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="2729" y="424"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Student Landing-->
         <scene sceneID="pnb-HG-QWk">
             <objects>
-                <tabBarController id="iRi-YJ-ZYD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="studentLanding" id="iRi-YJ-ZYD" customClass="StudentLanding" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLp-fR-f9k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -416,7 +423,7 @@
             </objects>
             <point key="canvasLocation" x="6242.0289855072469" y="-1706.25"/>
         </scene>
-        <!--Item-->
+        <!--Professors-->
         <scene sceneID="tkR-KM-DMd">
             <objects>
                 <tableViewController id="F9d-GH-4pO" sceneMemberID="viewController">
@@ -439,7 +446,7 @@
                             <outlet property="delegate" destination="F9d-GH-4pO" id="WV6-ar-WaQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="q1q-NS-7f1"/>
+                    <tabBarItem key="tabBarItem" title="Professors" id="q1q-NS-7f1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4G-DI-rBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -588,11 +595,11 @@
             </objects>
             <point key="canvasLocation" x="7099" y="-419"/>
         </scene>
-        <!--Item-->
+        <!--Professors-->
         <scene sceneID="sKE-db-hU3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ie3-bt-20o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5uj-kL-wZ3"/>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ie3-bt-20o" customClass="ProfessorTabBarViewController" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Professors" id="5uj-kL-wZ3"/>
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fa6-8D-rhD">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -608,10 +615,10 @@
             </objects>
             <point key="canvasLocation" x="4418.840579710145" y="-1078.125"/>
         </scene>
-        <!--Item-->
+        <!--Requests-->
         <scene sceneID="hac-tI-7iQ">
             <objects>
-                <tableViewController id="u6M-dy-Oh1" sceneMemberID="viewController">
+                <tableViewController id="u6M-dy-Oh1" customClass="RequestsVC" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qiz-2O-M1c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -631,7 +638,7 @@
                             <outlet property="delegate" destination="u6M-dy-Oh1" id="7LU-gP-9B2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="5yj-4d-sBY"/>
+                    <tabBarItem key="tabBarItem" title="Requests" id="5yj-4d-sBY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gk2-F1-9US" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1324,10 +1331,10 @@
             </objects>
             <point key="canvasLocation" x="5331.884057971015" y="-1706.25"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Professor Landing-->
         <scene sceneID="OQd-GH-sDG">
             <objects>
-                <tabBarController id="Mf5-wG-2ny" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="professorLanding" id="Mf5-wG-2ny" customClass="ProfessorLanding" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AgT-1W-KBP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1775,8 +1782,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7jr-BN-Yw1"/>
-        <segue reference="wEe-CE-1m8"/>
+        <segue reference="iP2-o5-MGz"/>
+        <segue reference="QFc-hE-XgO"/>
         <segue reference="0Pu-uB-pud"/>
         <segue reference="bxV-D3-IkH"/>
     </inferredMetricsTieBreakers>

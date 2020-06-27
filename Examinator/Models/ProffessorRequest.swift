@@ -7,15 +7,72 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
 
-struct ProfessorRequest{
+struct ProfessorRequest:Item{
+    static let ref = Database.database().reference(withPath: "professorRequests")
+    let id:String!
     let college:String!
     let professor:String!
     let state:String!
-//    init(college:String, professor:String, state:String) {
-//        self.college = college
-//        self.professor = professor
-//        self.state = state
-//    }
+    var title: String { professor }
+    var subtitle: String = ""
+    
+    init(id:String, college:String, professor:String, state:String) {
+        self.id = id
+        self.college = college
+        self.professor = professor
+        self.state = state
+    }
+    
+    static func createRequest(){
+        let uuid = UUID().uuidString
+        let dict = [
+            "id": uuid,
+            "college": User.currentUser.college,
+            "professor": (Auth.auth().currentUser?.email)!,
+            "state":"pending"
+            ] as [String : String]
+
+        ref.child(uuid).setValue(dict)
+
+    }
+    
+    static func getRequest(forProfessor professor:String, successHandler: @escaping (_ request:ProfessorRequest)->Void){
+        self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in
+            if dataSnapShot.exists() == false {return}
+            for child in dataSnapShot.children{
+                let request = (child as! DataSnapshot).value  as! [String: String]
+                if request["professor"] == professor{
+                    let newRequest = ProfessorRequest(id: request["id"]!,
+                                                      college: request["college"]!,
+                                                      professor: request["professor"]!,
+                                                      state: request["state"]!)
+                    successHandler(newRequest)
+                    break
+                }
+            }
+        }
+    }
+
+    static func getRequests(forCollege college:String, successHandler: @escaping (_ requests:[ProfessorRequest])->Void){
+        self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in
+            if dataSnapShot.exists() == false {return}
+            var requests = [ProfessorRequest]()
+            for child in dataSnapShot.children{
+                let request = (child as! DataSnapshot).value  as! [String: String]
+                if request["college"] == college{
+                    let newRequest = ProfessorRequest(id: request["id"]!,
+                                                      college: request["college"]!,
+                                                      professor: request["professor"]!,
+                                                      state: request["state"]!)
+                    requests.append(newRequest)
+                }
+            }
+            successHandler(requests)
+        }
+    }
+
 
 }
