@@ -36,7 +36,7 @@ class RequestsStrategyDS:NSObject,ExpandableDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "Expandable Cell", for: indexPath)
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "RequestCell")
         cell.textLabel?.text = items[indexPath.row].title
         return cell
     }

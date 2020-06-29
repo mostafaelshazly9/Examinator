@@ -254,7 +254,7 @@
         <!--Levels-->
         <scene sceneID="VGd-k1-9YV">
             <objects>
-                <tableViewController id="Vov-Uq-2pc" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LevelsVC" id="Vov-Uq-2pc" customClass="LevelsStrategy" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uu1-Bf-z18">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +275,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Levels" id="NnI-uZ-s8R">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fz9-Tm-874"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fz9-Tm-874">
+                            <connections>
+                                <action selector="barButtonTapped:" destination="Vov-Uq-2pc" id="jkZ-ZS-QnH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAd-Mm-e83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -524,11 +528,11 @@
             </objects>
             <point key="canvasLocation" x="2593" y="-1431"/>
         </scene>
-        <!--Item-->
+        <!--Levels-->
         <scene sceneID="cOC-V8-gbH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MK1-Af-dAS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qtQ-q9-tm0"/>
+                    <tabBarItem key="tabBarItem" title="Levels" id="qtQ-q9-tm0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8ZN-pJ-LBV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -11,10 +11,7 @@ import UIKit
 class RequestsVC:UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("going to new vc")
         let vc = ExpandableTableVC.setupView(forView: .requests)
-        vc.view.backgroundColor = .red
         present(vc, animated: true)
-        print("new vc loaded")
     }
 }
