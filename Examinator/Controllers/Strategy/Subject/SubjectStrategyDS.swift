@@ -1,25 +1,27 @@
 //
-//  LevelsStrategyDS.swift
+//  SubjectStrategyDS.swift
 //  Examinator
 //
-//  Created by Mostafa Elshazly on 6/29/20.
+//  Created by Mostafa Elshazly on 6/30/20.
 //  Copyright © 2020 Mostafa Elshazly. All rights reserved.
 //
 
 import UIKit
 
-class LevelsStrategyDS:NSObject,ExpandableDataSource{
+class SubjectStrategyDS:NSObject,ExpandableDataSource{
     var items: [Item] = []
     var tableView:UITableView!
-    
+    var level:String = ""
+    var department:String = ""
+
     func getItems() {
-        LevelDepartment.getLevels { levelDepartment in
-            self.items = levelDepartment
+        Subject.getSubjects(forLevel: level, forDepartment: department, successHandler: { subjects in
+            self.items = subjects
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
 
-        }
+        })
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,15 +30,15 @@ class LevelsStrategyDS:NSObject,ExpandableDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if items.count == 0 {
-        getItems()
-        self.tableView = tableView
+            self.tableView = tableView
+            getItems()
         }
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "Expandable Cell", for: indexPath)
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "LevelCell")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "SubjectCell")
         cell.textLabel?.text = items[indexPath.row].title
         return cell
     }

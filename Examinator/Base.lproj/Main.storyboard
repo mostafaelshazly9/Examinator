@@ -295,12 +295,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjI-zO-ugy">
-                                <rect key="frame" x="20" y="155" width="374" height="34"/>
+                                <rect key="frame" x="20" y="111" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Professor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ir6-1O-84K">
-                                <rect key="frame" x="20" y="217" width="374" height="34"/>
+                                <rect key="frame" x="20" y="173" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -550,7 +550,7 @@
         <!--Departments-->
         <scene sceneID="DUG-Xu-yRc">
             <objects>
-                <tableViewController id="0iA-Xe-15K" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DepartmentsStrategy" id="0iA-Xe-15K" customClass="DepartmentsStrategy" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cgf-rr-fRF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -571,7 +571,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Departments" id="gyh-KX-AC4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xlb-qK-Ezb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xlb-qK-Ezb">
+                            <connections>
+                                <action selector="barButtonTapped:" destination="0iA-Xe-15K" id="5Oq-VY-yBN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym1-zf-IOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -599,7 +603,7 @@
         <!--Subjects -->
         <scene sceneID="VcO-Ia-nRY">
             <objects>
-                <tableViewController id="rFf-IN-UR6" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SubjectStrategy" id="rFf-IN-UR6" customClass="SubjectStrategy" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tHO-2u-8rv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -622,7 +626,7 @@
                     <navigationItem key="navigationItem" title="Subjects " id="phR-DG-Atf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gTV-2t-xbp">
                             <connections>
-                                <segue destination="m8X-JB-Kyo" kind="show" id="npD-eH-1R5"/>
+                                <action selector="barButtonTapped:" destination="rFf-IN-UR6" id="Kpb-yT-ydI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -17,7 +17,7 @@ class LevelDepartment: Item {
     var department:String
     var college:String
     var title: String { level }
-    var subtitle: String { "" }
+    var subtitle: String { department }
     
     init(id:String, level:String, department:String, college:String){
         self.id = id
@@ -59,8 +59,35 @@ class LevelDepartment: Item {
         }
     }
 
+    static func createLevelDepartment(level levelName:String, department departmentName:String){
+        let uuid = UUID().uuidString
+        let dict = [
+            "id": uuid,
+            "college": User.currentUser.college,
+            "level": levelName,
+            "department":departmentName
+            ] as [String : String]
+
+        ref.child(uuid).setValue(dict)
+    }
     
-//    static func createLevelDepartment(college:String,level:String,dept:String)->LevelDepartment{
-//
-//    }
+    
+    static func getLevelDepartments(forLevel levelName:String, successHandler: @escaping (_ levels:[LevelDepartment])->Void){
+        self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in
+            if dataSnapShot.exists() == false {return}
+            var requests = [LevelDepartment]()
+            for child in dataSnapShot.children{
+                let request = (child as! DataSnapshot).value  as! [String: String]
+                if request["college"] == User.currentUser.college && request["level"] == levelName && request["department"] != "root"{
+                    let newRequest = LevelDepartment(id: request["id"]!,
+                                                     level: request["level"]!,
+                                                     department: request["department"]!,
+                                                     college: request["college"]!)
+                        requests.append(newRequest)
+                }
+            }
+            successHandler(requests)
+        }
+    }
+
 }

@@ -30,17 +30,17 @@ class LevelsStrategy:ExpandableTableVC, ExpandableStrategy{
         self.tableViewDataSource = tableViewDataSource
         (self.tableViewDelegate as! LevelsStrategyDelegate).dataSource = self.tableViewDataSource as! LevelsStrategyDS
         self.tableViewDelegate.rowTapped = {
-//            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: storyboardID) as! ProfessorRequestHandler
-//            let delegate = (self.tableViewDelegate as! RequestsStrategyDelegate)
-//            vc.setupView(request: delegate.dataSource.items[self.tableView.indexPathForSelectedRow!.row] as! ProfessorRequest)
-//            self.present(vc, animated: true)
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: storyboardID) as! DepartmentsStrategy
+            let delegate = (self.tableViewDelegate as! LevelsStrategyDelegate)
+            vc.level = delegate.dataSource.items[self.tableView.indexPathForSelectedRow!.row].title
+            vc.setupView(tableViewDelegate: DepartmentsStrategyDelegate(), tableViewDataSource: DepartmentsStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "SubjectStrategy", storyboardType: SubjectStrategy.self)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         tableView.delegate = self.tableViewDelegate
         tableView.dataSource = self.tableViewDataSource
         tableView.reloadData()
         self.barButtonFunction = barButtonFunction
-        
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
