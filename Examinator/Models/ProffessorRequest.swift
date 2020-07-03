@@ -17,7 +17,7 @@ struct ProfessorRequest:Item{
     let professor:String!
     let state:String!
     var title: String { professor }
-    var subtitle: String = ""
+    var subtitle: String { professor }
     
     init(id:String, college:String, professor:String, state:String) {
         self.id = id
@@ -73,6 +73,25 @@ struct ProfessorRequest:Item{
             successHandler(requests)
         }
     }
+    
+    static func getAcceptedProfessorRequests(successHandler: @escaping (_ requests:[ProfessorRequest])->Void){
+        self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in
+            if dataSnapShot.exists() == false {return}
+            var requests = [ProfessorRequest]()
+            for child in dataSnapShot.children{
+                let request = (child as! DataSnapshot).value  as! [String: String]
+                if request["college"] == User.currentUser.college && request["state"] == "accepted"{
+                    let newRequest = ProfessorRequest(id: request["id"]!,
+                                                      college: request["college"]!,
+                                                      professor: request["professor"]!,
+                                                      state: request["state"]!)
+                    requests.append(newRequest)
+                }
+            }
+            successHandler(requests)
+        }
+    }
+
 
     func acceptRequest(){
         ProfessorRequest.ref.child(self.id).updateChildValues(["state": "accepted"])

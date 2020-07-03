@@ -29,6 +29,16 @@ class ExpandableTableVC: UITableViewController{
             let strategy = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "DepartmentsStrategy") as! DepartmentsStrategy
             strategy.setupView(tableViewDelegate: DepartmentsStrategyDelegate(), tableViewDataSource: DepartmentsStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
             return strategy
+        case .professors:
+            let strategy = ProfessorStrategy()
+            strategy.setupView(tableViewDelegate: ProfessorStrategyDelegate(), tableViewDataSource: ProfessorStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
+            return strategy
+        case .subjects:
+            let strategy = SubjectStrategy()
+            strategy.setupView(tableViewDelegate: SubjectStrategyDelegate(), tableViewDataSource: ProfessorSubjectStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
+            return strategy
+
+
         default:
             print("Class not implemented yet")
             return ExpandableTableVC()

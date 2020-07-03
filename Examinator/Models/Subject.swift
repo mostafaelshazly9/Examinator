@@ -65,5 +65,26 @@ class Subject:Item{
             successHandler(subjects)
         }
     }
+    
+    static func getSubjectsForProfessor(professor :String, successHandler: @escaping (_ subjects:[Subject])->Void){
+        self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in
+            if dataSnapShot.exists() == false {return}
+            var subjects = [Subject]()
+            for child in dataSnapShot.children{
+                let subject = (child as! DataSnapshot).value  as! [String: String]
+                if subject["college"] == User.currentUser.college && subject["professor"] == professor{
+                    let newSubject = Subject(id: subject["id"]!,
+                                             name: subject["name"]!,
+                                             professor: subject["professor"]!,
+                                             level: subject["level"]!,
+                                             department: subject["department"]!,
+                                             college: subject["college"]!)
+                        subjects.append(newSubject)
+                }
+            }
+            successHandler(subjects)
+        }
+    }
+
 
 }

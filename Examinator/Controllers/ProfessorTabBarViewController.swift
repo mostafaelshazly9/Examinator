@@ -12,7 +12,7 @@ class ProfessorTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc1 = UIViewController()
+        let vc1 = ExpandableTableVC.setupView(forView: .professors)
         vc1.tabBarItem.title = "Professors"
         let vc2 = ExpandableTableVC.setupView(forView: .requests)
         vc2.tabBarItem.title = "Requests"
