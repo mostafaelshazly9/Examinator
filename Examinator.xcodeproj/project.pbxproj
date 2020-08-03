@@ -31,6 +31,9 @@
 		F26D0F04240067FB0012FC1B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D0F03240067FB0012FC1B /* Login.swift */; };
 		F26D0F062400680C0012FC1B /* RegisterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D0F052400680C0012FC1B /* RegisterPicker.swift */; };
 		F26D0F082400681E0012FC1B /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26D0F072400681E0012FC1B /* Register.swift */; };
+		F282510C24AF911000644472 /* QuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282510B24AF911000644472 /* QuestionStrategy.swift */; };
+		F282510E24AF911C00644472 /* QuestionStrategyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282510D24AF911C00644472 /* QuestionStrategyDelegate.swift */; };
+		F282511024AF912600644472 /* QuestionStrategyDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F282510F24AF912600644472 /* QuestionStrategyDS.swift */; };
 		F283B1E023F9FF6A0065B00D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1DF23F9FF6A0065B00D /* College.swift */; };
 		F283B1E223F9FF840065B00D /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E123F9FF840065B00D /* Level.swift */; };
 		F283B1E423F9FF900065B00D /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = F283B1E323F9FF900065B00D /* Department.swift */; };
@@ -50,6 +53,9 @@
 		F292091A24A990DD007B996B /* DepartmentStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292091924A990DD007B996B /* DepartmentStrategy.swift */; };
 		F2A7C657249655B30078CA7C /* Examinator.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A7C655249655B20078CA7C /* Examinator.png */; };
 		F2A7C658249655B30078CA7C /* Examinator.drawio in Resources */ = {isa = PBXBuildFile; fileRef = F2A7C656249655B30078CA7C /* Examinator.drawio */; };
+		F2C2669624D8B339007DE74A /* NewMCQQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2669524D8B339007DE74A /* NewMCQQuestionVC.swift */; };
+		F2C2669824D8B34C007DE74A /* NewTFQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2669724D8B34C007DE74A /* NewTFQuestionVC.swift */; };
+		F2C2669A24D8D693007DE74A /* KeyboardDismissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C2669924D8D693007DE74A /* KeyboardDismissing.swift */; };
 		F2C8774C2400723300927B9F /* AdminLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8774B2400723300927B9F /* AdminLanding.swift */; };
 		F2C8774E240073D500927B9F /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8774D240073D500927B9F /* AlertManager.swift */; };
 		F2C9D77823F8526900AE09A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C9D77723F8526900AE09A3 /* AppDelegate.swift */; };
@@ -62,6 +68,10 @@
 		F2D153A124AEEAFE00D52D65 /* ProfessorStrategyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153A024AEEAFE00D52D65 /* ProfessorStrategyDelegate.swift */; };
 		F2D153A324AEEB0A00D52D65 /* ProfessorStrategyDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153A224AEEB0A00D52D65 /* ProfessorStrategyDS.swift */; };
 		F2D153A524AEF1CD00D52D65 /* ProfessorSubjectStrategyDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153A424AEF1CD00D52D65 /* ProfessorSubjectStrategyDS.swift */; };
+		F2D153A824AF09F800D52D65 /* ChapterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153A724AF09F800D52D65 /* ChapterStrategy.swift */; };
+		F2D153AA24AF0A0400D52D65 /* ChapterStrategyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153A924AF0A0400D52D65 /* ChapterStrategyDelegate.swift */; };
+		F2D153AC24AF0A0D00D52D65 /* ChapterStrategyDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153AB24AF0A0D00D52D65 /* ChapterStrategyDS.swift */; };
+		F2D153AE24AF5C1600D52D65 /* ProfessorSubjectStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D153AD24AF5C1600D52D65 /* ProfessorSubjectStrategy.swift */; };
 		F2EBF05C24A94F6D002B4B30 /* LevelDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF05B24A94F6D002B4B30 /* LevelDepartment.swift */; };
 		F2EEC90624005D1F00FB4276 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2EEC90524005D1F00FB4276 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -92,6 +102,9 @@
 		F26D0F03240067FB0012FC1B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F26D0F052400680C0012FC1B /* RegisterPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPicker.swift; sourceTree = "<group>"; };
 		F26D0F072400681E0012FC1B /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		F282510B24AF911000644472 /* QuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategy.swift; sourceTree = "<group>"; };
+		F282510D24AF911C00644472 /* QuestionStrategyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategyDelegate.swift; sourceTree = "<group>"; };
+		F282510F24AF912600644472 /* QuestionStrategyDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategyDS.swift; sourceTree = "<group>"; };
 		F283B1DF23F9FF6A0065B00D /* College.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		F283B1E123F9FF840065B00D /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		F283B1E323F9FF900065B00D /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -111,6 +124,9 @@
 		F292091924A990DD007B996B /* DepartmentStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentStrategy.swift; sourceTree = "<group>"; };
 		F2A7C655249655B20078CA7C /* Examinator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Examinator.png; sourceTree = "<group>"; };
 		F2A7C656249655B30078CA7C /* Examinator.drawio */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Examinator.drawio; sourceTree = "<group>"; };
+		F2C2669524D8B339007DE74A /* NewMCQQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMCQQuestionVC.swift; sourceTree = "<group>"; };
+		F2C2669724D8B34C007DE74A /* NewTFQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTFQuestionVC.swift; sourceTree = "<group>"; };
+		F2C2669924D8D693007DE74A /* KeyboardDismissing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissing.swift; sourceTree = "<group>"; };
 		F2C8774B2400723300927B9F /* AdminLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLanding.swift; sourceTree = "<group>"; };
 		F2C8774D240073D500927B9F /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		F2C9D77423F8526900AE09A3 /* Examinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +141,10 @@
 		F2D153A024AEEAFE00D52D65 /* ProfessorStrategyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorStrategyDelegate.swift; sourceTree = "<group>"; };
 		F2D153A224AEEB0A00D52D65 /* ProfessorStrategyDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorStrategyDS.swift; sourceTree = "<group>"; };
 		F2D153A424AEF1CD00D52D65 /* ProfessorSubjectStrategyDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSubjectStrategyDS.swift; sourceTree = "<group>"; };
+		F2D153A724AF09F800D52D65 /* ChapterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterStrategy.swift; sourceTree = "<group>"; };
+		F2D153A924AF0A0400D52D65 /* ChapterStrategyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterStrategyDelegate.swift; sourceTree = "<group>"; };
+		F2D153AB24AF0A0D00D52D65 /* ChapterStrategyDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterStrategyDS.swift; sourceTree = "<group>"; };
+		F2D153AD24AF5C1600D52D65 /* ProfessorSubjectStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorSubjectStrategy.swift; sourceTree = "<group>"; };
 		F2EBF05B24A94F6D002B4B30 /* LevelDepartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDepartment.swift; sourceTree = "<group>"; };
 		F2EEC90524005D1F00FB4276 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF584851F65B8972851252AE /* Pods-Examinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examinator.debug.xcconfig"; path = "Target Support Files/Pods-Examinator/Pods-Examinator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				F20CAA9B24A75C7100FA8C2E /* TopMostVC.swift */,
+				F2C2669924D8D693007DE74A /* KeyboardDismissing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,10 +202,8 @@
 		F228654924AAA196003EDF5B /* Subject */ = {
 			isa = PBXGroup;
 			children = (
-				F228654A24AAA1B7003EDF5B /* SubjectStrategy.swift */,
-				F228654C24AAA1C6003EDF5B /* SubjectStrategyDelegate.swift */,
-				F228654E24AAA1D0003EDF5B /* SubjectStrategyDS.swift */,
-				F2D153A424AEF1CD00D52D65 /* ProfessorSubjectStrategyDS.swift */,
+				F2D153B024AF5DD400D52D65 /* professor */,
+				F2D153AF24AF5DCB00D52D65 /* admin */,
 			);
 			path = Subject;
 			sourceTree = "<group>";
@@ -192,6 +211,7 @@
 		F26D0F02240067640012FC1B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F2C2669424D8B320007DE74A /* NewQuestion */,
 				F2EBF06124A950B5002B4B30 /* Login+Registration */,
 				F2EBF06024A9508E002B4B30 /* Utility */,
 				F2EBF05F24A95075002B4B30 /* Landing */,
@@ -200,6 +220,16 @@
 				F20CAA9824A74C2400FA8C2E /* ProfessorRequestHandler.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F282510A24AF8AA500644472 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				F282510B24AF911000644472 /* QuestionStrategy.swift */,
+				F282510D24AF911C00644472 /* QuestionStrategyDelegate.swift */,
+				F282510F24AF912600644472 /* QuestionStrategyDS.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 		F283B1DE23F9FE850065B00D /* Models */ = {
@@ -253,6 +283,15 @@
 			path = Diagrams;
 			sourceTree = "<group>";
 		};
+		F2C2669424D8B320007DE74A /* NewQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				F2C2669524D8B339007DE74A /* NewMCQQuestionVC.swift */,
+				F2C2669724D8B34C007DE74A /* NewTFQuestionVC.swift */,
+			);
+			path = NewQuestion;
+			sourceTree = "<group>";
+		};
 		F2C9D76B23F8526900AE09A3 = {
 			isa = PBXGroup;
 			children = (
@@ -301,9 +340,40 @@
 			path = Professor;
 			sourceTree = "<group>";
 		};
+		F2D153A624AF09EA00D52D65 /* Chapter */ = {
+			isa = PBXGroup;
+			children = (
+				F2D153A724AF09F800D52D65 /* ChapterStrategy.swift */,
+				F2D153A924AF0A0400D52D65 /* ChapterStrategyDelegate.swift */,
+				F2D153AB24AF0A0D00D52D65 /* ChapterStrategyDS.swift */,
+			);
+			path = Chapter;
+			sourceTree = "<group>";
+		};
+		F2D153AF24AF5DCB00D52D65 /* admin */ = {
+			isa = PBXGroup;
+			children = (
+				F228654A24AAA1B7003EDF5B /* SubjectStrategy.swift */,
+				F228654C24AAA1C6003EDF5B /* SubjectStrategyDelegate.swift */,
+				F228654E24AAA1D0003EDF5B /* SubjectStrategyDS.swift */,
+			);
+			path = admin;
+			sourceTree = "<group>";
+		};
+		F2D153B024AF5DD400D52D65 /* professor */ = {
+			isa = PBXGroup;
+			children = (
+				F2D153AD24AF5C1600D52D65 /* ProfessorSubjectStrategy.swift */,
+				F2D153A424AEF1CD00D52D65 /* ProfessorSubjectStrategyDS.swift */,
+			);
+			path = professor;
+			sourceTree = "<group>";
+		};
 		F2EBF05D24A95056002B4B30 /* Strategy */ = {
 			isa = PBXGroup;
 			children = (
+				F282510A24AF8AA500644472 /* Question */,
+				F2D153A624AF09EA00D52D65 /* Chapter */,
 				F2D1539D24AEEAB400D52D65 /* Professor */,
 				F228654924AAA196003EDF5B /* Subject */,
 				F292091824A98F09007B996B /* Department */,
@@ -480,8 +550,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EBF05C24A94F6D002B4B30 /* LevelDepartment.swift in Sources */,
+				F2C2669824D8B34C007DE74A /* NewTFQuestionVC.swift in Sources */,
 				F20CAA9724A6D0B200FA8C2E /* ProfessorTabBarViewController.swift in Sources */,
 				F20CAA9524A6CF3900FA8C2E /* RequestsVC.swift in Sources */,
+				F2D153AC24AF0A0D00D52D65 /* ChapterStrategyDS.swift in Sources */,
 				F283B1E823F9FFDF0065B00D /* Subject.swift in Sources */,
 				F283B1EC23FA012E0065B00D /* Chapter.swift in Sources */,
 				F2D1539F24AEEADD00D52D65 /* ProfessorStrategy.swift in Sources */,
@@ -489,8 +561,10 @@
 				F292091324A954B5007B996B /* LevelsStrategyDelegate.swift in Sources */,
 				F228654B24AAA1B8003EDF5B /* SubjectStrategy.swift in Sources */,
 				F20CAA9324A6C9B300FA8C2E /* RequestsStrategyDelegate.swift in Sources */,
+				F2C2669624D8B339007DE74A /* NewMCQQuestionVC.swift in Sources */,
 				F292091524A95507007B996B /* LevelsStrategyDS.swift in Sources */,
 				F26D0F062400680C0012FC1B /* RegisterPicker.swift in Sources */,
+				F282511024AF912600644472 /* QuestionStrategyDS.swift in Sources */,
 				F283B1E623F9FFC50065B00D /* Professor.swift in Sources */,
 				F283B1F623FA03970065B00D /* ExamResult.swift in Sources */,
 				F2D153A524AEF1CD00D52D65 /* ProfessorSubjectStrategyDS.swift in Sources */,
@@ -499,6 +573,7 @@
 				F228654824AA8DB6003EDF5B /* DepartmentsStrategyDS.swift in Sources */,
 				F283B1E223F9FF840065B00D /* Level.swift in Sources */,
 				F283B1F423FA019F0065B00D /* ExamRules.swift in Sources */,
+				F2D153A824AF09F800D52D65 /* ChapterStrategy.swift in Sources */,
 				F2C8774C2400723300927B9F /* AdminLanding.swift in Sources */,
 				F2C9D77C23F8526900AE09A3 /* ViewController.swift in Sources */,
 				F20CAA8B24A69FF900FA8C2E /* Item.swift in Sources */,
@@ -508,6 +583,7 @@
 				F292091A24A990DD007B996B /* DepartmentStrategy.swift in Sources */,
 				F20CAA8924A6999000FA8C2E /* ExpandableDelegate.swift in Sources */,
 				F2C9D77823F8526900AE09A3 /* AppDelegate.swift in Sources */,
+				F282510C24AF911000644472 /* QuestionStrategy.swift in Sources */,
 				F283B1EA23FA00130065B00D /* ProffessorRequest.swift in Sources */,
 				F20CAA8724A6962D00FA8C2E /* ExpandableDataSource.swift in Sources */,
 				F2C8774E240073D500927B9F /* AlertManager.swift in Sources */,
@@ -515,12 +591,16 @@
 				F20CAA8D24A6B9AA00FA8C2E /* ExpandableTableVC.swift in Sources */,
 				F228654D24AAA1C6003EDF5B /* SubjectStrategyDelegate.swift in Sources */,
 				F26D0F082400681E0012FC1B /* Register.swift in Sources */,
+				F282510E24AF911C00644472 /* QuestionStrategyDelegate.swift in Sources */,
 				F2D153A324AEEB0A00D52D65 /* ProfessorStrategyDS.swift in Sources */,
 				F283B1F023FA016D0065B00D /* Exam.swift in Sources */,
 				F20CAA9C24A75C7100FA8C2E /* TopMostVC.swift in Sources */,
+				F2C2669A24D8D693007DE74A /* KeyboardDismissing.swift in Sources */,
 				F228654F24AAA1D0003EDF5B /* SubjectStrategyDS.swift in Sources */,
+				F2D153AA24AF0A0400D52D65 /* ChapterStrategyDelegate.swift in Sources */,
 				F20CAA8F24A6BBBC00FA8C2E /* RequestsStrategy.swift in Sources */,
 				F20CAA8024A4AFCA00FA8C2E /* StudentLanding.swift in Sources */,
+				F2D153AE24AF5C1600D52D65 /* ProfessorSubjectStrategy.swift in Sources */,
 				F283B1E023F9FF6A0065B00D /* College.swift in Sources */,
 				F20CAA9124A6C1D500FA8C2E /* RequestsStrategyDS.swift in Sources */,
 				F228654624AA8DA6003EDF5B /* DepartmentsStrategyDelegate.swift in Sources */,

@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Item{
+    var id:String { get set }
     var title:String { get }
     var subtitle:String { get }
 }

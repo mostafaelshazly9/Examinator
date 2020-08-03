@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -347,7 +347,9 @@
                             <outlet property="delegate" destination="gO6-Dn-0mG" id="Jnw-Aq-qhn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subjects" id="Y72-EO-PBL"/>
+                    <navigationItem key="navigationItem" title="Subjects" id="Y72-EO-PBL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="eKT-YG-cTs"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWb-EF-TmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1072,7 +1074,7 @@
         <!--Chapters-->
         <scene sceneID="iQh-Bf-Jmp">
             <objects>
-                <tableViewController id="yTX-sS-Ksi" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChapterStrategy" id="yTX-sS-Ksi" customClass="ChapterStrategy" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qTk-Qq-9cS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1093,7 +1095,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chapters" id="2k6-em-KEo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="J96-5a-Cdn"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="J96-5a-Cdn">
+                            <connections>
+                                <action selector="barButtonTapped:" destination="yTX-sS-Ksi" id="uVu-sm-niL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqU-G3-aTA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1112,7 +1118,7 @@
         <!--Questions-->
         <scene sceneID="HZj-eF-sFx">
             <objects>
-                <tableViewController id="trn-JF-FhQ" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="QuestionStrategy" id="trn-JF-FhQ" customClass="QuestionStrategy" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="slg-G2-OzP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1133,23 +1139,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Questions" id="hMu-Of-L86">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hZs-Mi-HgI"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hZs-Mi-HgI">
+                            <connections>
+                                <segue destination="MEQ-6h-pNy" kind="show" id="phH-RR-feh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCW-V8-6Fz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationBar contentMode="scaleToFill" id="cet-Oy-Qqk">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <navigationItem title="Questions" id="s4h-Rv-Tme">
-                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="aYc-1i-au2">
-                                <connections>
-                                    <segue destination="MEQ-6h-pNy" kind="show" id="R3R-cV-z4S"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
             </objects>
             <point key="canvasLocation" x="9619" y="-3599"/>
         </scene>
@@ -1203,30 +1200,33 @@
             </objects>
             <point key="canvasLocation" x="10533" y="-3599"/>
         </scene>
-        <!--View Controller-->
+        <!--NewTF QuestionVC-->
         <scene sceneID="wZa-6a-pHn">
             <objects>
-                <viewController id="5bn-2Z-fYX" sceneMemberID="viewController">
+                <viewController id="5bn-2Z-fYX" customClass="NewTFQuestionVC" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jXQ-OT-KNV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sentence" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e8u-qy-Gs5">
-                                <rect key="frame" x="20" y="44" width="374" height="162"/>
+                                <rect key="frame" x="20" y="44" width="374" height="79"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="i5x-wB-KbU"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oHK-k1-6LP">
-                                <rect key="frame" x="20" y="249" width="374" height="32"/>
+                                <rect key="frame" x="20" y="166" width="374" height="32"/>
                                 <segments>
                                     <segment title="True"/>
                                     <segment title="False"/>
                                 </segments>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xZl-PD-V9x">
-                                <rect key="frame" x="20" y="340" width="374" height="32"/>
+                                <rect key="frame" x="20" y="257" width="374" height="32"/>
                                 <segments>
                                     <segment title="A"/>
                                     <segment title="B"/>
@@ -1243,24 +1243,32 @@
                             <constraint firstItem="e8u-qy-Gs5" firstAttribute="leading" secondItem="Vm1-bE-kMP" secondAttribute="leading" constant="20" id="I25-1S-VDc"/>
                             <constraint firstItem="oHK-k1-6LP" firstAttribute="top" secondItem="e8u-qy-Gs5" secondAttribute="bottom" constant="43" id="KPF-W8-do0"/>
                             <constraint firstItem="xZl-PD-V9x" firstAttribute="leading" secondItem="Vm1-bE-kMP" secondAttribute="leading" constant="20" id="ceH-6d-97M"/>
-                            <constraint firstItem="Vm1-bE-kMP" firstAttribute="bottom" secondItem="xZl-PD-V9x" secondAttribute="bottom" constant="437" id="f6m-JY-0RS"/>
                             <constraint firstItem="Vm1-bE-kMP" firstAttribute="trailing" secondItem="e8u-qy-Gs5" secondAttribute="trailing" constant="20" id="ooa-Ra-M4l"/>
                             <constraint firstItem="xZl-PD-V9x" firstAttribute="top" secondItem="oHK-k1-6LP" secondAttribute="bottom" constant="60" id="vnl-qN-js9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vm1-bE-kMP"/>
                     </view>
                     <navigationItem key="navigationItem" id="JG3-3v-lm2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fUt-gI-1hb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fUt-gI-1hb">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="5bn-2Z-fYX" id="HdX-a8-58n"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categorySegmentControl" destination="xZl-PD-V9x" id="bMU-QR-F8L"/>
+                        <outlet property="sentenceTextView" destination="e8u-qy-Gs5" id="gOp-Sc-Rpx"/>
+                        <outlet property="truthSegmentControl" destination="oHK-k1-6LP" id="wfP-Bz-FmG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iR9-Yg-wdm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13471.014492753624" y="-3100.4464285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--NewMCQ QuestionVC-->
         <scene sceneID="RIl-e7-9fC">
             <objects>
-                <viewController id="uBZ-dc-XGm" sceneMemberID="viewController">
+                <viewController id="uBZ-dc-XGm" customClass="NewMCQQuestionVC" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iqN-bT-HfL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1268,6 +1276,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgc-0N-S3z">
                                 <rect key="frame" x="20" y="60" width="374" height="162"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="KA2-ri-GOZ"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1307,7 +1318,6 @@
                             <constraint firstItem="Tgc-0N-S3z" firstAttribute="top" secondItem="LZX-N9-2SI" secondAttribute="top" constant="60" id="8it-N7-glt"/>
                             <constraint firstItem="LZX-N9-2SI" firstAttribute="trailing" secondItem="res-7D-M4H" secondAttribute="trailing" constant="20" id="AF0-vS-hwY"/>
                             <constraint firstItem="S39-3x-lvP" firstAttribute="leading" secondItem="LZX-N9-2SI" secondAttribute="leading" constant="20" id="Cxf-mi-iV1"/>
-                            <constraint firstItem="LZX-N9-2SI" firstAttribute="bottom" secondItem="mCe-S2-Djn" secondAttribute="bottom" constant="255" id="DAB-S4-Ouy"/>
                             <constraint firstItem="IC3-cM-ekw" firstAttribute="top" secondItem="S39-3x-lvP" secondAttribute="bottom" constant="28" id="GEu-32-h7W"/>
                             <constraint firstItem="IC3-cM-ekw" firstAttribute="leading" secondItem="LZX-N9-2SI" secondAttribute="leading" constant="20" id="IYR-ET-a6z"/>
                             <constraint firstItem="Tgc-0N-S3z" firstAttribute="leading" secondItem="LZX-N9-2SI" secondAttribute="leading" constant="20" id="JgR-H0-bea"/>
@@ -1326,8 +1336,20 @@
                         <viewLayoutGuide key="safeArea" id="LZX-N9-2SI"/>
                     </view>
                     <navigationItem key="navigationItem" id="z1L-r5-AjU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ii1-JK-EnV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ii1-JK-EnV">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="uBZ-dc-XGm" id="kOG-Np-EgV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categorySegmentControl" destination="mCe-S2-Djn" id="OyI-b2-FHy"/>
+                        <outlet property="questionTextView" destination="Tgc-0N-S3z" id="mzk-cu-uN8"/>
+                        <outlet property="rightAnswerTextField" destination="S39-3x-lvP" id="FyW-wg-IaC"/>
+                        <outletCollection property="wrongAnswerTextFields" destination="IC3-cM-ekw" collectionClass="NSMutableArray" id="YhM-JD-WAW"/>
+                        <outletCollection property="wrongAnswerTextFields" destination="Xtt-fo-c2L" collectionClass="NSMutableArray" id="Q5d-Og-RaL"/>
+                        <outletCollection property="wrongAnswerTextFields" destination="res-7D-M4H" collectionClass="NSMutableArray" id="nE6-wM-Kgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSQ-aT-HXm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

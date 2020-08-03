@@ -32,12 +32,13 @@ class ProfessorLanding: UITabBarController {
     
     private func loadVCs(){
         let vc1 = ExpandableTableVC.setupView(forView: .subjects)
-        vc1.tabBarItem.title = "Subjects"
+        let nav1 = UINavigationController(rootViewController: vc1)
+        nav1.tabBarItem.title = "Subjects"
         let vc2 = UIViewController()
         vc2.tabBarItem.title = "Exam Structure"
         let vc3 = UIViewController()
         vc3.tabBarItem.title = "Results"
-        viewControllers = [vc1, vc2, vc3]
+        viewControllers = [nav1, vc2, vc3]
 
     }
     

@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 struct ProfessorRequest:Item{
     static let ref = Database.database().reference(withPath: "professorRequests")
-    let id:String!
+    var id:String = ""
     let college:String!
     let professor:String!
     let state:String!

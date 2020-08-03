@@ -34,8 +34,8 @@ class ExpandableTableVC: UITableViewController{
             strategy.setupView(tableViewDelegate: ProfessorStrategyDelegate(), tableViewDataSource: ProfessorStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
             return strategy
         case .subjects:
-            let strategy = SubjectStrategy()
-            strategy.setupView(tableViewDelegate: SubjectStrategyDelegate(), tableViewDataSource: ProfessorSubjectStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
+            let strategy = ProfessorSubjectStrategy()
+            strategy.setupView(tableViewDelegate: SubjectStrategyDelegate(), tableViewDataSource: ProfessorSubjectStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "ChapterStrategy", storyboardType: ChapterStrategy.self)
             return strategy
 
 
