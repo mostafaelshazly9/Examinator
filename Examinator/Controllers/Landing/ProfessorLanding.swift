@@ -34,11 +34,18 @@ class ProfessorLanding: UITabBarController {
         let vc1 = ExpandableTableVC.setupView(forView: .subjects)
         let nav1 = UINavigationController(rootViewController: vc1)
         nav1.tabBarItem.title = "Subjects"
-        let vc2 = UIViewController()
-        vc2.tabBarItem.title = "Exam Structure"
+        let vc2 = ExpandableTableVC.setupView(forView: .subjects)
+        (vc2 as! SubjectStrategy).tableViewDelegate.rowTapped = {
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "ExamStructureVC") as! ExamStructureVC
+            let delegate = ((vc2 as! SubjectStrategy).tableViewDelegate as! SubjectStrategyDelegate)
+            vc.subject = delegate.dataSource.items[(vc2 as! SubjectStrategy).tableView.indexPathForSelectedRow!.row].id
+            vc2.navigationController?.pushViewController(vc, animated: true)
+        }
+        let nav2 = UINavigationController(rootViewController: vc2)
+        nav2.tabBarItem.title = "Exam Structure"
         let vc3 = UIViewController()
         vc3.tabBarItem.title = "Results"
-        viewControllers = [nav1, vc2, vc3]
+        viewControllers = [nav1, nav2, vc3]
 
     }
     

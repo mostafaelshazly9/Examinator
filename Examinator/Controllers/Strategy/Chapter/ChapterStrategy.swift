@@ -33,7 +33,7 @@ class ChapterStrategy:ExpandableTableVC, ExpandableStrategy{
         self.tableViewDelegate.rowTapped = {
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "QuestionStrategy") as! QuestionStrategy
             let delegate = (self.tableViewDelegate as! ChapterStrategyDelegate)
-            vc.chapter = delegate.dataSource.items[self.tableView.indexPathForSelectedRow!.row].subtitle
+            vc.chapter = delegate.dataSource.items[self.tableView.indexPathForSelectedRow!.row].id
             vc.subject = self.subject
             vc.setupView(tableViewDelegate: QuestionStrategyDelegate(), tableViewDataSource: QuestionStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
             self.navigationController?.pushViewController(vc, animated: true)
