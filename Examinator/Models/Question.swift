@@ -25,6 +25,7 @@ class Question:Item{
     let question:String!
     let correctAnswer:String!
     var wrongAnswers = [String]()
+    lazy var answers:[String]  = getShuffledAnswers()
     let chapter:String!
     let qType:QType!
     let category:Category!
@@ -98,6 +99,30 @@ class Question:Item{
             }
         }
     }
+
+    static func getQuestions(forSubject subject:String, successHandler: @escaping (_ questions:[Question])->Void){
+        self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in
+            var questions = [Question]()
+            if dataSnapShot.exists() == false {return}
+            for child in dataSnapShot.children{
+                let question = (child as! DataSnapshot).value  as! [String: Any]
+                if question["subject"] as! String == subject{
+                    let newQuestion = Question(id: question["id"] as! String,
+                                               question: question["question"] as! String,
+                                               type: QType(rawValue: question["qType"] as! String)!,
+                                               correctAnswer: question["correctAnswer"] as! String,
+                                               wrongAnswers: question["wrongAnswers"] as! [String],
+                                               chapter: question["chapter"] as! String,
+                                               category: Category(rawValue: question["category"] as! String) ?? Category.A)
+                    questions.append(newQuestion)
+                }
+                successHandler(questions.shuffled())
+                
+                
+            }
+        }
+    }
+
     
     static func getQuestionsNumbers(forSubject subject:String, forChapter chapter:String, successHandler: @escaping (_ numbers:[Int])->Void){
         self.ref.observeSingleEvent(of: .value) { (dataSnapShot) in

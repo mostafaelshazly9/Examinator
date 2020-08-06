@@ -9,10 +9,10 @@
 import UIKit
 
 class ExpandableTableVC: UITableViewController{
-//    var strategy = ViewType.unknown
+    //    var strategy = ViewType.unknown
     
     enum ViewType {
-        case subjects, chapters, questions, students, professors, levels, departments, requests, results, examSubjects, unknown
+        case subjects, chapters, questions, students, professors, levels, departments, requests, results, examSubjects, structures ,unknown
     }
     
     static func setupView(forView selectedView:ViewType)-> ExpandableTableVC{
@@ -37,8 +37,20 @@ class ExpandableTableVC: UITableViewController{
             let strategy = ProfessorSubjectStrategy()
             strategy.setupView(tableViewDelegate: SubjectStrategyDelegate(), tableViewDataSource: ProfessorSubjectStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "ChapterStrategy", storyboardType: ChapterStrategy.self)
             return strategy
-
-
+//        case .structures:
+//            let strategy = ProfessorSubjectStrategy()
+//            strategy.setupView(tableViewDelegate: SubjectStrategyDelegate(), tableViewDataSource: ProfessorSubjectStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "ChapterStrategy", storyboardType: ChapterStrategy.self)
+//            
+//            strategy.tableViewDelegate.rowTapped = {
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "ExamStructureVC") as! ExamStructureVC
+//                let delegate = (strategy.tableViewDelegate as! SubjectStrategyDelegate)
+//                vc.subject = delegate.dataSource.items[strategy.tableView.indexPathForSelectedRow!.row].id
+//                strategy.navigationController?.pushViewController(vc, animated: true)
+//            }
+            return strategy
+            
+            
+            
         default:
             print("Class not implemented yet")
             return ExpandableTableVC()

@@ -34,6 +34,7 @@ class ProfessorLanding: UITabBarController {
         let vc1 = ExpandableTableVC.setupView(forView: .subjects)
         let nav1 = UINavigationController(rootViewController: vc1)
         nav1.tabBarItem.title = "Subjects"
+//        let vc2 = ExpandableTableVC.setupView(forView: .structures)
         let vc2 = ExpandableTableVC.setupView(forView: .subjects)
         (vc2 as! SubjectStrategy).tableViewDelegate.rowTapped = {
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "ExamStructureVC") as! ExamStructureVC

@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.tests" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES2-e4-1TG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.testfgdsaz" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES2-e4-1TG">
                                 <rect key="frame" x="20" y="152" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1257,7 +1257,7 @@
         <!--Subjects-->
         <scene sceneID="GkV-Wo-u82">
             <objects>
-                <tableViewController id="sLt-LU-UTb" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StudentSubjectStrategy" id="sLt-LU-UTb" customClass="StudentSubjectStrategy" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kYU-3A-NE9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1379,10 +1379,10 @@
             </objects>
             <point key="canvasLocation" x="5181" y="1091"/>
         </scene>
-        <!--View Controller-->
+        <!--Question-->
         <scene sceneID="lmu-SQ-rFH">
             <objects>
-                <viewController id="l2c-Lj-Igt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TFQuestion" id="l2c-Lj-Igt" customClass="TFQuestion" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P1n-Ox-CQW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1403,6 +1403,9 @@
                                     <segment title="True"/>
                                     <segment title="False"/>
                                 </segments>
+                                <connections>
+                                    <action selector="answerSegmentControlValueChanged:" destination="l2c-Lj-Igt" eventType="valueChanged" id="jxX-Hf-cVO"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1417,17 +1420,26 @@
                         <viewLayoutGuide key="safeArea" id="5Qe-n6-JDb"/>
                     </view>
                     <navigationItem key="navigationItem" id="IIx-ZS-3qu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="73a-MH-1wO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="73a-MH-1wO">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="l2c-Lj-Igt" id="gL2-UL-Nei"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerSegmentControl" destination="FGd-wH-Waq" id="3hL-rD-F7u"/>
+                        <outlet property="questionTextView" destination="jkr-UQ-FxA" id="1Vg-p6-ofs"/>
+                        <outlet property="saveButton" destination="73a-MH-1wO" id="8HX-Le-KAg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRI-TD-JnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7265" y="1091"/>
         </scene>
-        <!--View Controller-->
+        <!--Question-->
         <scene sceneID="WYr-Rs-zNc">
             <objects>
-                <viewController id="OZ0-s9-TlA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MCQQuestion" id="OZ0-s9-TlA" customClass="MCQQuestion" customModule="Examinator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZmE-md-Luu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1470,6 +1482,9 @@
                                     <segment title="3"/>
                                     <segment title="4"/>
                                 </segments>
+                                <connections>
+                                    <action selector="answerSegmentControlValueChanged:" destination="OZ0-s9-TlA" eventType="valueChanged" id="vJW-Rj-iTd"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1496,8 +1511,21 @@
                         <viewLayoutGuide key="safeArea" id="2BR-8W-pQT"/>
                     </view>
                     <navigationItem key="navigationItem" id="RS5-wU-Gt7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9pw-s7-xX6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9pw-s7-xX6">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="OZ0-s9-TlA" id="3XW-fZ-bsr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answerSegmentControl" destination="Hpz-25-szi" id="QEI-LZ-gd7"/>
+                        <outlet property="questionTextView" destination="w4R-HV-YNL" id="S2X-5k-fgJ"/>
+                        <outlet property="saveButton" destination="9pw-s7-xX6" id="iMI-Xp-mTi"/>
+                        <outletCollection property="answerTextFields" destination="xeR-pF-bsj" collectionClass="NSMutableArray" id="vzu-Y5-A3b"/>
+                        <outletCollection property="answerTextFields" destination="aBf-b0-OLB" collectionClass="NSMutableArray" id="lFX-gY-NAI"/>
+                        <outletCollection property="answerTextFields" destination="nTc-Tj-69y" collectionClass="NSMutableArray" id="iSD-io-gQk"/>
+                        <outletCollection property="answerTextFields" destination="ev7-eg-elh" collectionClass="NSMutableArray" id="li5-NA-JKp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr6-jZ-EF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

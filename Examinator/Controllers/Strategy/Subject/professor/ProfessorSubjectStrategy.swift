@@ -12,10 +12,10 @@ class ProfessorSubjectStrategy: SubjectStrategy{
     override func setupView<T>(tableViewDelegate: ExpandableDelegate, tableViewDataSource: ExpandableDataSource, barButtonTitle: String, barButtonFunction: (() -> Void)?, editFunction: ((Item) -> Void)?, deleteFunction: ((Item) -> Void)?, storyboardID: String, storyboardType: T.Type) {
         super.setupView(tableViewDelegate: tableViewDelegate, tableViewDataSource: tableViewDataSource, barButtonTitle: barButtonTitle, barButtonFunction: barButtonFunction, editFunction: editFunction, deleteFunction: deleteFunction, storyboardID: storyboardID, storyboardType: storyboardType)
                 self.tableViewDelegate.rowTapped = {
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: storyboardID) as! ChapterStrategy
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "ChapterStrategy") as! ChapterStrategy
                     let delegate = (self.tableViewDelegate as! SubjectStrategyDelegate)
                     vc.subject = delegate.dataSource.items[self.tableView.indexPathForSelectedRow!.row].id
-                    vc.setupView(tableViewDelegate: ChapterStrategyDelegate(), tableViewDataSource: ChapterStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "", storyboardType: ExpandableTableVC.self)
+                    vc.setupView(tableViewDelegate: ChapterStrategyDelegate(), tableViewDataSource: ChapterStrategyDS(), barButtonTitle: "", barButtonFunction: nil, editFunction: nil, deleteFunction: nil, storyboardID: "QuestionStrategy", storyboardType: QuestionStrategy.self)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
 

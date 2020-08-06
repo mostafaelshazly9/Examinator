@@ -17,6 +17,7 @@ class User{
     var email = ""
     var college = ""
     var type = UserType.student
+    var department = "dep 1"
     
     enum UserType:String{
         case student, professor, admin
@@ -48,14 +49,24 @@ class User{
             //            Registration successful
             if error == nil {
                 let uuid = UUID().uuidString
-                let dict = [
-                    "id": uuid,
-                    "user": email,
-                    "type":userType.rawValue,
-                    "college":college
-                    ] as [String : Any]
-                
-                ref.child(uuid).setValue(dict)
+                if userType.rawValue == "student"{
+                    let dict = [
+                        "id": uuid,
+                        "user": email,
+                        "type":userType.rawValue,
+                        "college":college,
+                        "department": "dep 1"
+                        ] as [String : Any]
+                    ref.child(uuid).setValue(dict)
+                }else{
+                    let dict = [
+                        "id": uuid,
+                        "user": email,
+                        "type":userType.rawValue,
+                        "college":college
+                        ] as [String : Any]
+                    ref.child(uuid).setValue(dict)
+                }
                 login(email: email, password: password, successHandler: successHandler, errorHandler: errorHandler)
                 
                 
